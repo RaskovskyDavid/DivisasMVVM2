@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DivisasMVVM2.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,8 @@ namespace DivisasMVVM2
         public App()
         {
             InitializeComponent();
-
-            MainPage = new DivisasMVVM2.MainPage();
+            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new DivisasMVVM2.MainPage();
         }
 
         protected override void OnStart()

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DivisasMVVM2.Pages.MainPage"
+             xmlns:control="clr-namespace:DivisasMVVM2.Controls"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Foreign Exchange">
+    <!--<ContentPage.Content>-->
+    <StackLayout
+            Padding="8">
+        <Label
+            Text="Monto:">
+        </Label>
+        <Entry
+            Placeholder="Ingrese un monto"
+         Keyboard="Numeric"
+        Text="{Binding Amount, Mode=TwoWay}">
+        </Entry>
+        <Label
+      Text="Moneda de Origen:">
+        </Label>
+      
+        <control:BindablePicker
+          Title="Select source currency..."
+          DisplayMemberPath="Code"
+          SelectedValuePath="TaxRate"
+          ItemsSource="{Binding Rates}"
+          SelectedValue ="{Binding Path=SourceRate, Mode=TwoWay}"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="Center">
+        </control:BindablePicker>
+        <Label
+      Text="Target currency:">
+        </Label>
+        <control:BindablePicker
+      Title="Select target currency..."
+      DisplayMemberPath="Code"
+      SelectedValuePath="TaxRate"
+      ItemsSource="{Binding Rates}"
+      SelectedValue ="{Binding Path=TargetRate, Mode=TwoWay}"
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="Center">
+        </control:BindablePicker>
+        <Button
+      Command="{Binding ConvertCommand}"
+      IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+      Text="Convert"
+      BackgroundColor="Navy"
+      TextColor="White"
+      HeightRequest="40"
+      BorderRadius="20">
+        </Button>
+        <ActivityIndicator
+      IsRunning="{Binding IsRunning, Mode=TwoWay}">
+        </ActivityIndicator>
+        <Label
+      Text="{Binding Message}"
+      BackgroundColor="Silver"
+      TextColor="Purple"
+      FontAttributes="Bold"
+      HorizontalTextAlignment="Center"
+      VerticalTextAlignment="Center"
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="FillAndExpand">
+        </Label>
+
+    </StackLayout>
+    <!--</ContentPage.Content>-->
+</ContentPage>

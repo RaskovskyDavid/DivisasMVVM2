@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:infra="clr-namespace:DivisasMVVM2.Infrastructure;assembly=DivisasMVVM2"
              x:Class="DivisasMVVM2.App">
-	<Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
 
-		<!-- Application resource dictionary -->
+            <!-- Locator -->
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
 
-	</Application.Resources>
+        </ResourceDictionary>
+        <!-- Application resource dictionary -->
+
+        </Application.Resources>
 </Application>
