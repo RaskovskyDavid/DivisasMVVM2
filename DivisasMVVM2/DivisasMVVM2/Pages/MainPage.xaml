@@ -47,13 +47,12 @@
       Text="Convert"
       BackgroundColor="Navy"
       TextColor="White"
-      HeightRequest="40"
+      HeightRequest="20"
       BorderRadius="20">
         </Button>
-        <ActivityIndicator
-      IsRunning="{Binding IsRunning, Mode=TwoWay}">
-        </ActivityIndicator>
-        <Label
+         <Label
+       HeightRequest="20"
+            WidthRequest="100"
       Text="{Binding Message}"
       BackgroundColor="Silver"
       TextColor="Purple"
@@ -63,6 +62,10 @@
       HorizontalOptions="FillAndExpand"
       VerticalOptions="FillAndExpand">
         </Label>
+        <ActivityIndicator HeightRequest="20" WidthRequest="100"
+      IsRunning="{Binding IsRunning, Mode=TwoWay}">
+        </ActivityIndicator>
+       
 
     </StackLayout>
     <!--</ContentPage.Content>-->
